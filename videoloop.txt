@@ -1,0 +1,40 @@
+*** video loop sin instalar ningun SO especial***
+
+
+
+Quemar el SO raspbian en el micro usb y dejar iniciar de forma normal
+se recomienda para esto Imager de rpi
+
+https://www.raspberrypi.org/downloads/
+---------------------------------------
+
+Copiar el video en /home/pi/Videos 
+Crear un directorio de nombre autostart here: /home/pi/.config/autostart
+(mkdir autostar) 
+En el directorio recien creado, crear un archivo de nombre .desktop
+(nano .desktop)
+dentro de este archivo escribir las siguientes lineas
+###
+Type=Application
+Exec=lxterminal -e "omxplayer -b --loop --no-osd /home/pi/Videos/MyVideoFile.mp4 --aspect-mode stretch"
+###
+(existen 3 modos de aspecto para omxplayer, stretch, letterbox y fill, esto es en caso de tener problemas de display)
+salvar el archivo y hacerlo booteable
+(sudo chmod 777 .desktop)
+
+Eliminar advertencia de bajo voltaje.
+En caso de desear eliminar la etiqueta de bajo voltaje que aparece cuando no se usa la fuente de poder correcta, ir a
+sudo nano /boot/config.txt
+
+y añadir la siguiente linea
+
+# Disable under-voltage warning
+avoid_warnings=1
+
+Finalmente si queremos que la pantalla no se bloquee mientras reproduce el video descargar xscreensaver
+sudo apt install xscreensaver
+
+Desde ahí gestionar la desactivación del bloqueo de pantalla. 
+
+##### se buscara modificar este ultimo paso para solo tener que modificar parte del SO en lugar de descargar software####
+
