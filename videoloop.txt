@@ -35,6 +35,7 @@ Finalmente si queremos que la pantalla no se bloquee mientras reproduce el video
 sudo apt install xscreensaver
 
 Desde ahí gestionar la desactivación del bloqueo de pantalla. 
+reiniciar y dejar que el video ande
 
 ##### se buscara modificar este ultimo paso para solo tener que modificar parte del SO en lugar de descargar software####
 
